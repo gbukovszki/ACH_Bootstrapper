@@ -10,9 +10,9 @@ with open('config/net-config.json') as config_file:
 l = ldap.initialize(cfg_data["ldap"]["ldap_uri"])
 
 try:
-	l.protocol_version = ldap.VERSION3	
+    l.protocol_version = ldap.VERSION3	
 except ldap.LDAPError, e:
-	print e
+    print e
 	
 
 searchScope = ldap.SCOPE_SUBTREE
@@ -22,8 +22,8 @@ retrieveAttributes = None
 
 
 try:
-	result = l.search_s(baseDN, searchScope, searchFilter, retrieveAttributes)
-	print result
+    result = l.search_s(baseDN, searchScope, searchFilter, retrieveAttributes)
+    print result
     l.unbind_s()
 except ldap.LDAPError, e:
-	print e
+    print e
