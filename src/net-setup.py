@@ -10,8 +10,8 @@ with open('config/net-config.json') as config_file:
 l = ldap.initialize(cfg_data["ldap"]["ldap_uri"])
 
 searchScope = ldap.SCOPE_SUBTREE
-searchFilter = cfg_data["netconfig"]["searchdn_dhcp"]
-baseDN = cfg_data["ldap"]["basedn"]
+searchFilter = "(objectClass=dhcpHost)"
+baseDN = cfg_data["netconfig"]["basedn_dhcp"]
 retrieveAttributes = None 
 binddn = cfg_data["netconfig"]["binduser"]
 pw = cfg_data["netconfig"]["bindpw"]

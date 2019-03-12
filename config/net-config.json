@@ -4,7 +4,8 @@
         "basedn" : "dc=bukovszki,dc=hu"
     },
     "netconfig" : {
-        "searchdn_dhcp" : "cn=dnsdhcpcconfig,ou=dhcp,ou=config,dc=kerak",
+        "searchdn_dhcp" : "",
+        "basedn_dhcp" : "ou=dhcp,ou=config,dc=kerak,dc=bukovszki,dc=hu",
         "binduser" : "cn=dhcpadmin,dc=bukovszki,dc=hu",
         "bindpw" : "dhcp1C!"
     }
