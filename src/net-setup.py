@@ -7,7 +7,7 @@ with open('config/net-config.json') as config_file:
 
 ## first you must open a connection to the server
 
-	l = ldap.initialize(cfg_data["ldap"]["ldap_uri"])
+l = ldap.initialize(cfg_data["ldap"]["ldap_uri"])
 
 try:
 	l.protocol_version = ldap.VERSION3	
