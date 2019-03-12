@@ -7,11 +7,7 @@ with open('config/net-config.json') as config_file:
 
 ## first you must open a connection to the server
 try:
-	l = ldap.open(cfg_data['ldap_uri'])
-	## searching doesn't require a bind in LDAP V3.  If you're using LDAP v2, set the next line appropriately
-	## and do a bind as shown in the above example.
-	# you can also set this to ldap.VERSION2 if you're using a v2 directory
-	# you should  set the next option to ldap.VERSION2 if you're using a v2 directory
+	l = ldap.initialize(cfg_data['ldap_uri'])
 	l.protocol_version = ldap.VERSION3	
 except ldap.LDAPError, e:
 	print e
