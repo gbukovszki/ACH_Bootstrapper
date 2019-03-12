@@ -7,15 +7,15 @@ with open('config/net-config.json') as config_file:
 
 ## first you must open a connection to the server
 try:
-	l = ldap.initialize(cfg_data['ldap_uri'])
+	l = ldap.initialize(cfg_data["ldap"]["ldap_uri"])
 	l.protocol_version = ldap.VERSION3	
 except ldap.LDAPError, e:
 	print e
 	
 
 searchScope = ldap.SCOPE_SUBTREE
-searchFilter = cfg_data['searchdn_dhcp']
-baseDN = cfg_data['basedn']
+searchFilter = cfg_data["ldap"]["searchdn_dhcp"]
+baseDN = cfg_data["ldap"]["basedn"]
 retrieveAttributes = None 
 
 
