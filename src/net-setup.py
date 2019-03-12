@@ -14,7 +14,7 @@ except ldap.LDAPError, e:
 	
 
 searchScope = ldap.SCOPE_SUBTREE
-searchFilter = cfg_data["ldap"]["searchdn_dhcp"]
+searchFilter = cfg_data["netconfig"]["searchdn_dhcp"]
 baseDN = cfg_data["ldap"]["basedn"]
 retrieveAttributes = None 
 
