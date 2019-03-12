@@ -1,6 +1,6 @@
 {
     "ldap" : {
-        "ldap_uri" : "localhost",
+        "ldap_uri" : "ldap://localhost:389",
         "basedn" : "dc=bukovszki,dc=hu"
     },
     "netconfig" : {
