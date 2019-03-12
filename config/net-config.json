@@ -1,9 +1,9 @@
 {
     "ldap" : {
         "ldap_uri" : "localhost",
-        "basedn" : "asa"
+        "basedn" : "dc=bukovszki,dc=hu"
     },
     "netconfig" : {
-        "searchdn_dhcp" : "asa"
+        "searchdn_dhcp" : "cn=dnsdhcpcconfig,ou=dhcp,ou=config,dc=kerak"
     }
 }
