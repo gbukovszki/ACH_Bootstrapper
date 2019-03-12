@@ -1,0 +1,9 @@
+{
+    "ldap" : {
+        "ldap_uri" : "localhost",
+        "basedn" : "asa"
+    },
+    "netconfig" : {
+        "searchdn_dhcp" : "asa"
+    }
+}
