@@ -9,17 +9,18 @@ with open('config/net-config.json') as config_file:
 
 l = ldap.initialize(cfg_data["ldap"]["ldap_uri"])
 
-try:
-    l.protocol_version = ldap.VERSION3	
-except ldap.LDAPError, e:
-    print e
-	
-
 searchScope = ldap.SCOPE_SUBTREE
 searchFilter = cfg_data["netconfig"]["searchdn_dhcp"]
 baseDN = cfg_data["ldap"]["basedn"]
 retrieveAttributes = None 
+binddn = cfg_data["netconfig"]["binduser"]
+pw = cfg_data["netconfig"]["bindpw"]
 
+try:
+    l.protocol_version = ldap.VERSION3
+    l.simple_bind_s(binddn, pw)
+except ldap.LDAPError, e:
+    print e
 
 try:
     result = l.search_s(baseDN, searchScope, searchFilter, retrieveAttributes)
